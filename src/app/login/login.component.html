@@ -1,12 +1,32 @@
 <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
-      <input name="first" ngModel required #first="ngModel">
-      <input name="last" ngModel>
-      <button>Submit</button>
+      <div class="form-group">
+            <label for="InputEmail">Email address</label>
+            <input ngModel
+                   required
+                   name="first"
+                   #first="ngModel"
+                   id="InputEmail"
+                   type="email"
+                   class="form-control"
+                   aria-describedby="emailHelp"
+                   placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+            <label for="InputPassword">Password</label>
+            <input ngModel
+                   required
+                   name="last"
+                   type="password"
+                   class="form-control"
+                   id="InputPassword"
+                   placeholder="Password">
+      </div>
+      <button [disabled]="!f.valid" class="btn btn-primary">Submit</button>
 </form>
+
+
 <p>First name value: {{ first.value }}</p>
 <p>First name valid: {{ first.valid }}</p>
 <p>Form value: {{ f.value | json }}</p>
 <p>Form valid: {{ f.valid }}</p>
-
-
-<alert type="success">hello</alert>
