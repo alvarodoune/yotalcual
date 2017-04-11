@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Form} from '@angular/forms';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+      selector: 'app-login',
+      templateUrl: './login.component.html',
+      styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+      constructor() {
+      }
 
-  ngOnInit() {
-  }
+      ngOnInit() {
+      }
+
+      private login(f: Form) {
+            console.log(f);
+      }
 
 }
