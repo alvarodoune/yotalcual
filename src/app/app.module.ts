@@ -1,13 +1,14 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-import {FormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
+import {BrowserModule} from "@angular/platform-browser";
+import {NgModule} from "@angular/core";
+import {RouterModule, Routes} from "@angular/router";
+import {FormsModule} from "@angular/forms";
+import {HttpModule} from "@angular/http";
 
-import {AppComponent} from './app.component';
-import {LoginComponent} from './login/login.component';
-import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
-import {AlertModule} from 'ng2-bootstrap';
+import {AppComponent} from "./app.component";
+import {LoginComponent} from "./login/login.component";
+import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
+import {AlertModule} from "ng2-bootstrap";
+import {CoreModule} from "./core/core.module";
 
 
 const appRoutes: Routes = [
@@ -50,6 +51,7 @@ const appRoutes: Routes = [
             BrowserModule,
             FormsModule,
             HttpModule,
+            CoreModule,
             RouterModule.forRoot(appRoutes),
             AlertModule.forRoot()
             // AdministrationModule
