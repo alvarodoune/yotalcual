@@ -1,3 +1,4 @@
+import { PageNotFoundModule } from './../page-not-found/page-not-found.module';
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
@@ -5,12 +6,16 @@ import {RouterModule, Routes} from "@angular/router";
 import {ShellComponent} from './shell/shell.component';
 import {TopBarComponent} from './shell/top-bar/top-bar.component';
 import {MainContentComponent} from './shell/main-content/main-content.component';
-import {LoginComponent} from "../login/login.component";
-import {PageNotFoundComponent} from "../page-not-found/page-not-found.component";
 
 const appRoutes: Routes = [
-      {path: '', component: LoginComponent},
-      {path: 'login', component: LoginComponent},
+      {
+            path: '',
+            loadChildren: './../Page-Not-Found/page-not-found.module#PageNotFoundModule'
+      },
+      {
+            path: 'login',
+            loadChildren: './../Login/login.module#LoginModule'
+      },
       // {path: 'home', component: HomeComponent},
       // {path: 'detail', component: DeliveryDetailComponent},
       // {
@@ -27,21 +32,22 @@ const appRoutes: Routes = [
       //       ]
       // },
       // {path: 'delete', component: DeleteDeliveryComponent},
-      {
-            path: '',
-            redirectTo: '/login',
-            pathMatch: 'full'
-      },
-      {
-            path: '**',
-            component: PageNotFoundComponent
-      }
+
+      // {
+      //       path: '',
+      //       redirectTo: '/login',
+      //       pathMatch: 'full'
+      // },
+      // {
+      //       path: '**',
+      //       component: PageNotFoundComponent
+      // }
 ];
 
 @NgModule({
       imports: [
             CommonModule,
-            RouterModule
+            RouterModule.forRoot(appRoutes),
       ],
       declarations: [ShellComponent, TopBarComponent, MainContentComponent],
       exports: [ShellComponent]

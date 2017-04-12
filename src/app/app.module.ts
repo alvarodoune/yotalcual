@@ -18,8 +18,8 @@ import {ShellComponent} from "./core/shell/shell.component";
             FormsModule,
             HttpModule,
             CoreModule,
-            RouterModule.forRoot(appRoutes),
-            AlertModule.forRoot()
+            //RouterModule.forRoot(appRoutes),
+            //AlertModule.forRoot()
       ],
       providers: [],
       bootstrap: [ShellComponent]
