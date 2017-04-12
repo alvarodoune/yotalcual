@@ -9,6 +9,7 @@ import {LoginComponent} from "./login/login.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import {AlertModule} from "ng2-bootstrap";
 import {CoreModule} from "./core/core.module";
+import {ShellComponent} from "./core/shell/shell.component";
 
 
 const appRoutes: Routes = [
@@ -57,7 +58,7 @@ const appRoutes: Routes = [
             // AdministrationModule
       ],
       providers: [],
-      bootstrap: [AppComponent]
+      bootstrap: [ShellComponent]
 })
 export class AppModule {
 }
