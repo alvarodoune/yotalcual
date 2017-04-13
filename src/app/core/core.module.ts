@@ -1,4 +1,4 @@
-import { PageNotFoundModule } from './../page-not-found/page-not-found.module';
+import {PageNotFoundModule} from './../page-not-found/page-not-found.module';
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
@@ -9,13 +9,17 @@ import {MainContentComponent} from './shell/main-content/main-content.component'
 
 const appRoutes: Routes = [
       {
-            path: '',
-            loadChildren: './../Page-Not-Found/page-not-found.module#PageNotFoundModule'
+            path: 'home',
+            loadChildren: './../home/home.module#HomeModule'
       },
       {
             path: 'login',
-            loadChildren: './../Login/login.module#LoginModule'
+            loadChildren: './../login/login.module#LoginModule'
       },
+      {
+            path: '**',
+            loadChildren: './../page-Not-Found/page-not-found.module#PageNotFoundModule'
+      }
       // {path: 'home', component: HomeComponent},
       // {path: 'detail', component: DeliveryDetailComponent},
       // {
@@ -47,7 +51,7 @@ const appRoutes: Routes = [
 @NgModule({
       imports: [
             CommonModule,
-            RouterModule.forRoot(appRoutes),
+            RouterModule.forRoot(appRoutes)
       ],
       declarations: [ShellComponent, TopBarComponent, MainContentComponent],
       exports: [ShellComponent]
