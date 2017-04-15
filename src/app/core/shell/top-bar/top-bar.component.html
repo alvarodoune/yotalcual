@@ -1,19 +1,14 @@
-<nav>
+<nav class="navbar fixed-top navbar-toggleable-md navbar-inverse bg-faded">
       <ul class="nav nav-tabs">
             <li class="nav-item">
-                  <a class="nav-link" [routerLink]="['login']" routerLinkActive="menu-active">Login</a>
+                  <a class="nav-link" routerLink="login" routerLinkActive="menu-active">Login</a>
             </li>
             <li class="nav-item">
                   <a class="nav-link" routerLink="home" routerLinkActive="menu-active">Inicio</a>
             </li>
-            <li class="nav-item">
-                  <a class="nav-link" routerLink="delivery" routerLinkActive="menu-active">Create</a>
-            </li>
-            <li class="nav-item">
-                  <a class="nav-link" routerLink="delete" routerLinkActive="menu-active">Delete</a>
-            </li>
-            <li class="nav-item">
-                  <a class="nav-link" routerLink="detail" routerLinkActive="menu-active">List</a>
-            </li>
       </ul>
+      <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
 </nav>
